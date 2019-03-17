@@ -1,0 +1,136 @@
+/**
+ * @Annie Larkin 3/12/19
+ * we gotta make a vehicle
+ * fields:
+ * boolean goodCondition
+ * String name?
+ * int maxPass
+ * int horsePower
+ * (static)int totalManufactured
+ * int mileage
+ * static fleetMileage
+ * 
+ * constructor
+ *  -no args
+ *  -many args
+ *  
+ * methods
+ *  -repair
+ *  -change horsepower
+ *  -[manufacture count
+ *  -individual milage
+ *  -fleet mileage]
+ *  -drive(int miles) //you gotta update mileage and fleetMileage
+ *  -toString
+ */
+import java.util.Scanner;
+public class Vehicle
+{
+    private boolean goodCondition;
+    private String name;
+    private int maxPass;
+    private int horsePower;
+    private static int totalManufactured;
+    private int mileage;
+    private static int fleetMileage;
+    
+    public Vehicle()
+    {
+        name = "car";
+        goodCondition = true;
+        maxPass = 7;
+        horsePower = 120;
+        mileage = 0;
+        
+        totalManufactured++;
+    }
+    
+    public Vehicle(String n, int mp, int hp, int m, boolean gc)
+    {
+        name = n;
+        maxPass = mp;
+        horsePower = hp;
+        mileage = m;
+        goodCondition = gc;
+        totalManufactured++;
+        fleetMileage+=m;
+    }
+    public String getName(Vehicle a)
+    {
+        return name;
+    }
+    public void Repair()
+    {
+        goodCondition = true;
+        System.out.println(name + " has been repaired.");
+    }
+    public int getHorsePower(Vehicle a)
+    {
+        return horsePower;
+    }
+    public int getMaxPass(Vehicle a)
+    {
+        return maxPass;
+    }
+   
+    public int getMileage(Vehicle a)
+    {
+        return mileage;
+    }
+    public boolean getGoodCondition(Vehicle a)
+    {
+        return goodCondition;
+    }
+    public int setMaxPass(Vehicle a, int x)
+    {
+        maxPass = x;
+        return maxPass;
+    }
+    public int setMileage(Vehicle a, int m)
+    {
+        mileage = m;
+        return mileage;
+    }
+    public String setName(Vehicle a, String n)
+    {
+        name = n;
+        return "the new name of this vehicle is " + name;
+    }
+    public void changeHorsePower(int a)
+    {
+        horsePower = a;
+        System.out.println("the new horse power of " + name + " is " + horsePower); 
+    }
+    public int manufactureCount()
+    {
+        return totalManufactured;
+    }
+    public int individualMileage()
+    {
+        return mileage;
+    }
+    public static int fleetMileage()
+    {
+        return fleetMileage;
+    }
+    public int getFleetMileage()
+    {
+        return fleetMileage;
+    }
+    public void drive()
+    {
+        Scanner in = new Scanner(System.in); 
+        System.out.print("How many miles do you want to drive?:  ");
+        int moreMiles = in.nextInt();
+        mileage+=moreMiles;
+        fleetMileage+=moreMiles;
+        System.out.println("the new individual mileage is: " + mileage);
+        System.out.println("the new fleet mileage is: " + fleetMileage);
+    }
+    public String toString()
+    {
+        return "this car's name is " + name +"\nthis car's mileage is "
+                + mileage + "\nthis car's maximum passengers is " + this.maxPass
+                + "\nthis car's horse power is " + this.horsePower;
+    }
+}
