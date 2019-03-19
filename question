@@ -1,0 +1,29 @@
+/**
+ * !!!!!!DON'T READ THE CODE YET JUST RUN IT TRUST ME!!!1
+ * !!!!!!!!!!!!!!!!!1!!!!!!!!!!!!!!!!!!!!!!!!!!11!!!!!!!!
+ */
+
+import java.util.Scanner;
+public class question
+{
+    public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in);
+        System.out.println("hey Jeff !\n");
+        System.out.println("yeah uhhh i didn't know how to do this creatively but");
+        System.out.println("many have told me that just texting you would be boring so uh");
+        System.out.print("\nanyways, do you want to go to prom with me? that would be SICK: ");
+        String n = in.nextLine();
+        if (n.equalsIgnoreCase("yes") || n.equalsIgnoreCase("sure"))
+        {
+            System.out.println("\nhaha heck yeah");
+            System.out.println("[insert funny reaction image here](I don't know how to print a picture)");
+            System.out.println("\nyeah i actually don't know what your response was so could u text it to me");
+        }
+        else
+        {
+            System.out.println("understandable, that's okay");
+            System.out.println("\nyeah i actually don't know what your response was so could u text it to me");
+        }
+    }
+}
