@@ -16,13 +16,13 @@ public class question
         String n = in.nextLine();
         if (n.equalsIgnoreCase("yes") || n.equalsIgnoreCase("sure"))
         {
-            System.out.println("\nhaha heck yeah");
+            System.out.println("\nhaha heck yeah!");
             System.out.println("[insert funny reaction image here](I don't know how to print a picture)");
             System.out.println("\nyeah i actually don't know what your response was so could u text it to me");
         }
         else
         {
-            System.out.println("understandable, that's okay");
+            System.out.println("\nunderstandable, that's okay");
             System.out.println("\nyeah i actually don't know what your response was so could u text it to me");
         }
     }
