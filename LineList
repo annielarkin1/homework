@@ -1,0 +1,69 @@
+/**
+ * @Annie Larkin 3/18/19
+ * LineList Class for Shuffler
+ */
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import javax.swing.JFileChooser;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.io.IOException;
+import java.util.Scanner;
+import java.util.*;
+import java.util.*;
+public class LineList 
+{
+    private ArrayList<String> x;
+    public LineList() 
+    {
+         x = new ArrayList<String>();
+    }
+    
+    public int size()
+    {
+        return x.size();
+    }
+
+    public String get(int y)
+    {
+        return x.get(y);
+    }
+
+    public void add(String l)
+    {
+        x.add(l);
+    }
+
+    public String remove(int y)
+    {
+        String f = x.get(y);
+        x.remove(y);
+        return f;
+    }
+
+    public void move(int i, int i2)
+    {
+        String f = x.get(i);
+        x.remove(i);
+        x.add(i2,f);
+    }
+    
+    public int getRandom(int n)
+    {
+        return (int)((Math.random())*n);
+    }
+    
+    public void shuffle()
+    {
+        int n = x.size();
+        while(n >= 2)
+        {
+            Collections.swap(x,getRandom(n),getRandom(n));
+            n--;
+        }
+    }
+}
