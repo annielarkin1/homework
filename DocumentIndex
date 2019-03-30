@@ -1,0 +1,60 @@
+/**
+ * @Annie Larkin 3/28/19
+ * DocumentIndex class
+ * I think I did this completely wrong, I tried to look it up to figure it out
+ * and (tried) to follow what it said to do but it still makes no sense to me
+ */
+
+import java.io.*;
+import java.util.*;
+public class DocumentIndex extends ArrayList<IndexEntry>
+{
+    public DocumentIndex()
+    {
+         super();
+    }
+    public DocumentIndex(int size)
+    {
+         super(size);
+    }
+    public void addWord(String str, int num)
+    {
+        boolean found = false;
+        IndexEntry ie = new IndexEntry(str);
+        ie.add(num);
+        for(IndexEntry i : this)
+        {
+            if(str.toUpperCase().equals(i.getWord()))
+            {
+               i.add(num); 
+               found = true; 
+            }
+        }
+        if(found == false && size() > 0)
+        {
+            if(get(size()-1).getWord().compareTo(str.toUpperCase()) < 0)
+            {
+               add(ie); 
+               return; 
+            } 
+            for(IndexEntry i : this) 
+            {
+               if(i.getWord().compareTo(str.toUpperCase()) > 0) 
+               {
+                  add(indexOf(i), ie);
+                  return;
+               }
+            }
+        }
+        else if (found == false)
+            add(ie); 
+      }
+    
+    public void addAllWords(String str, int num)
+    {
+         String[] strArray = str.split("[., \"!?]"); 
+         for(String s : strArray)
+            if(!s.equals(""))
+               addWord(s, num);
+    }
+}
