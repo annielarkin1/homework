@@ -1,0 +1,47 @@
+/**
+ * @Annie Larkin 3/25/19
+ * class that represents a board game
+ */
+//abstract means this class can't be obstantiated
+public abstract class Movie
+{
+    //Fields of the super class
+    private String title;
+    private String genre;
+    private int length;
+    private boolean watched;
+    //Constructor of the Super Class
+    public Movie(boolean w)
+    {
+        title = "The Shining";
+        length = 206;
+        genre = "horror";
+        watched = w;
+    }
+    public Movie()
+    {
+        title = "MOVIE!!!";
+        length = 90;
+        genre = "horror";
+        watched = true;
+    }
+    public Movie(String t, String g, int l, boolean w)
+    {
+        title = t;
+        genre = g;
+        length = l;
+        watched = w; 
+    }
+    public String getTitle()
+    {
+        return this.title;
+    }
+    public String watch()
+    {
+        this.watched = true;
+        return this.title + " has now been watched.";
+    }
+    //Methods of the Super Class
+    public abstract String didILikeIt();
+    
+}
