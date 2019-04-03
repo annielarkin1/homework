@@ -1,0 +1,18 @@
+/**
+ * @Annie Larkin 
+ * Test of the abstract class assignment
+ */
+
+public class movieTest
+{
+    public static void main(String[] args)
+    {
+        theShining view1 = new theShining(true);
+        CivilWar view11 = new CivilWar(true, "Bucky Barnes", true);
+        
+        System.out.println(view1.didILikeIt());
+        System.out.println(view1.getTitle());
+        
+        System.out.println(view11.didILikeIt());
+    }
+}
