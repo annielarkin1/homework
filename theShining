@@ -1,0 +1,38 @@
+/**
+ * @Annie Larkin 4/2/19
+ * Hey this is the Shining, that movie with Jack Nicholson.
+ * Cool. 
+ */
+
+public class theShining extends Movie
+{
+    private String wereYouScared;
+    private int viewNumber; //the reason this is only for this class is because
+    //you can consider this movie rewatchable, whereas with others you can't AT ALL
+    public theShining()
+    {
+        super();
+        wereYouScared = "NEVER";
+        viewNumber = 3;
+    }
+    public theShining(boolean w)
+    {
+        super(w); //calls the constructer of the super class 
+        wereYouScared = "maybe";
+        viewNumber = 1;
+    }
+    public theShining(String t, String g, int l, boolean w, String wys, int vn)
+    {
+        super(t,g,l,w);
+        wereYouScared = wys;
+        viewNumber = vn;
+    }
+    public String getTitle()
+    {
+        return "the Shining";
+    }
+    public String didILikeIt()
+    {
+        return "Yeah I think so";
+    }
+}
