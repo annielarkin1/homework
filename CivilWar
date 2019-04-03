@@ -1,0 +1,20 @@
+/**
+ * @Annie Larkin
+ * Civil War class for the abstract class Movie
+ */
+
+public class CivilWar extends Movie
+{
+    private String bestCharacter;
+    private boolean wantToWatchItAgain;
+    public CivilWar(boolean w, String bc, boolean www)
+    {
+        super(w);
+        bestCharacter = "Bucky Barnes";
+        wantToWatchItAgain = true;
+    }
+    public String didILikeIt()
+    {
+        return "of COURSE i LOVED it";
+    }
+}
