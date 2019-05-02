@@ -1,0 +1,47 @@
+/**
+ * @Annie Larkin 4/30
+ * seating chart assignment
+ */
+import java.util.*;
+public class ArrayReview
+{
+    public static void main(String[] args)
+    {
+        String[][] seatingChart = new String[4][6];
+        //I only realized once I was done typing all of this that there was a better way to do it whoops
+        seatingChart[0][0] = "";
+        seatingChart[0][1] = "";
+        seatingChart[0][2] = "Tyler";
+        seatingChart[0][3] = "Annie";
+        seatingChart[0][4] = "Declan";
+        seatingChart[0][5] = "Michael";
+        seatingChart[1][0] = "";
+        seatingChart[1][1] = "";
+        seatingChart[1][2] = "";
+        seatingChart[1][3] = "";
+        seatingChart[1][4] = "";
+        seatingChart[1][5] = "Steve";
+        seatingChart[2][0] = "Winn";
+        seatingChart[2][1] = "";
+        seatingChart[2][2] = "Brady";
+        seatingChart[2][3] = "Kyle";
+        seatingChart[2][4] = "Finn";
+        seatingChart[2][5] = "Nate";
+        seatingChart[3][0] = "Anders";
+        seatingChart[3][1] = "";
+        seatingChart[3][2] = "Gibby";
+        seatingChart[3][3] = "Nick";
+        seatingChart[3][4] = "Jeff";
+        seatingChart[3][5] = "Addie";
+        System.out.println(Arrays.deepToString(seatingChart).replace("], ", "]\n").replace("[[", "[").replace("]]", "]"));
+        System.out.println(randomSelect(seatingChart));
+    }
+    public static String randomSelect(String[][] a)
+    {
+        int r = (int)(Math.random()*4) + 0;
+        int c = (int)(Math.random()*6) + 0;
+        if (a[r][c] == "")
+            randomSelect(a);
+        return a[r][c];
+    }
+}
